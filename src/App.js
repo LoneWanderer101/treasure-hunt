@@ -4,15 +4,18 @@ import Square from "./components/Square";
 
 const App = () => {
   const [board, setBoard] = useState([
-    "?", "?", "?", "?", "?", "?", "?", "?", "?",
-  ]);
+    "?", "?", "?", "?", "?", "?", "?", "?", "?"]);
+
+  const handleGamePlay = (index) => {
+    alert(index)
+  }
 
   return (
     <>
       <h1>Treasure Hunt Game</h1>
       <div className="boardgame">
         {board.map((value, index) => {
-          return <Square value={value} />;
+          return <Square value={value} index={index} handleGamePlay={handleGamePlay} />;
         })}
       </div>
     </>
